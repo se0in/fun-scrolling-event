@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'PyeongChangPeace-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.flow-text-content {
+  width: 100%;
+  font-family: 'PyeongChangPeace-Bold';
+  overflow: hidden;
+
+  .text-line {
+    width: 100vw;
+    margin-bottom: 8vw;
+    display: flex;
+    color: #fff;
+
+    &:nth-child(1) {
+      margin-top: 25vh;
+      transform: rotate(-2deg);
+      background-color: #46B0EC;
+    }
+
+    &:nth-child(2) {
+      transform: rotate(2deg);
+      background-color: #F5D25D;
+      justify-content: flex-end;
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-2deg);
+      background-color: #FB376A;
+    }
+
+    p {
+      display: flex;
+      padding: 2vh 0;
+      font-size: clamp(2vw, 7vw, 4rem);
+    }
+  }
+}
