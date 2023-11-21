@@ -1,10 +1,28 @@
 .slide-emotion-content {
   margin: 300px 0;
   overflow: hidden;
-  height: 2000px;
-//미끄럼틀 영역
+  // background-color: rgb(162, 199, 102);
+  height: 4000px;
+  //미끄럼틀 영역
   .scroll-container {
-    background-color: rgb(41, 41, 41);
-    
+    height: 1000px;
+    // background-color: rgba(41, 41, 41, 0.178);
+    .rainbow-wrap {
+      // background-color: rgba(0, 0, 255, 0.164);
+      .rainbow {
+        width: 100%;
+      }
+      .icon-list {
+        // background-color: rgba(255, 0, 0, 0.144);
+        img {
+          position: absolute;
+          z-index: 100;
+          display: none;
+          max-width: 10vw;
+        }
+      }
+    }
   }
 }
+
+

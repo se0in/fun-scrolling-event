@@ -1,6 +1,7 @@
 import './App.css';
 import FlowText from './components/FlowText';
-import ScrollEmoticon from './components/SlideEmoticon';
+import SlideEmoticon from './components/SlideEmoticon';
+
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <FlowText />
-      <ScrollEmoticon />
+      <SlideEmoticon />
     </div>
   );
 }
