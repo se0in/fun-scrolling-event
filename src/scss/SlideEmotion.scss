@@ -1,9 +1,9 @@
 .slide-emotion-content {
-  margin: 300px 0;
+  margin: 0;
   overflow: hidden;
 
   .scroll-container {
-    height: 3000px;
+    height: 2000px;
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
@@ -12,8 +12,8 @@
 
     .rainbow-wrap {
       .rainbow {
-        width: 100%;
-        animation: icon_animation 5s infinite;
+        width: 0;
+        animation: icon_animation 6s infinite;
       }
 
       .emotion-list {
@@ -23,7 +23,7 @@
           z-index: 100;
           display: none;
           animation: icon_animation 3s infinite;
-          max-width: 15vw;
+          max-width: 10vw;
         }
       }
 
@@ -31,7 +31,7 @@
         img[class^=icon] {
           position: fixed;
           display: none;
-          animation: icon_animation 3s infinite;
+          animation: icon_animation 5s infinite;
 
           &:nth-child(1) {
             top: 30vh;

@@ -8,11 +8,11 @@ const SlideEmoticon = () => {
 
   const getRandom = useMemo(() => () => Math.random() * 3 + 0.5, []);
 
-  const plusSection = 1500;
+  const plusSection = 1000;
 
   useEffect(() => {
     const emotionsIcon = emotions.map((index) => document.querySelector(`.emotion_${index}`));
-    const stuffIcon = icons.map((index) => document.querySelector(`.icon_${index}`));
+    /*c onst stuffIcon = icons.map((index) => document.querySelector(`.icon_${index}`)); */
 
     const drawRainbow = () => {
       const scrollTop = window.scrollY;
@@ -62,11 +62,11 @@ const SlideEmoticon = () => {
             }
           }
         });
-        stuffIcon.forEach((icons, i) => {
+        /* stuffIcon.forEach((icons, i) => {
           if (maxPercentageScrolled === 100) {
             icons.style.display = 'block';
           }
-        })
+        }) */
       } else {
         rainbowWrap.style.position = 'static';
         rainbowWrap.style.opacity = '0';
