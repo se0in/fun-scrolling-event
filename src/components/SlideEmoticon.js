@@ -2,21 +2,23 @@ import React, { useEffect, useMemo, useRef } from 'react';
 import '../scss/SlideEmotion.scss';
 
 const SlideEmoticon = () => {
-  const rainbowRef = useRef(null);
-  const rainbowWrapRef = useRef(null);
-  const containerRef = useRef(null);
-  const icons = useMemo(() => [1, 2, 3, 4, 5, 6, 7], []);
+  const [rainbowRef, rainbowWrapRef, containerRef] = [useRef(null), useRef(null), useRef(null)]
+  const emotions = [...Array.from({ length: 7 }, (_, index) => index + 1)]
+  const icons = [...Array.from({ length: 7 }, (_, index) => index + 1)]
 
   const getRandom = useMemo(() => () => Math.random() * 3 + 0.5, []);
+
   const plusSection = 1500;
 
   useEffect(() => {
-    const items = icons.map((index) => document.querySelector(`.icon_${index}`));
+    const emotionsIcon = emotions.map((index) => document.querySelector(`.emotion_${index}`));
+    const stuffIcon = icons.map((index) => document.querySelector(`.icon_${index}`));
 
     const drawRainbow = () => {
       const scrollTop = window.scrollY;
+      console.log('scrollTop: ', scrollTop);
       const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight + plusSection;
+      const documentHeight = document.documentElement.scrollHeight;
       const rainbowWrap = rainbowWrapRef.current;
       const container = containerRef.current;
       const percentageScrolled = (scrollTop / (documentHeight - windowHeight)) * 400;
@@ -29,46 +31,62 @@ const SlideEmoticon = () => {
 
       if (containerBounding && containerBounding.top <= 83.722) {
         rainbowWrap.style.position = 'fixed';
-        rainbowWrap.style.top = '10%';
+        rainbowWrap.style.top = '35vh';
         rainbowWrap.style.left = '0';
-        items.forEach((item, i) => {
-          if (item) {
+        rainbowWrap.style.opacity = '1';
+        rainbowWrap.style.transition = 'opacity .5s';
+        emotionsIcon.forEach((emotion, i) => {
+          if (emotion) {
             if (maxPercentageScrolled === 100) {
-              if (items[0] || items[1]) {
-                console.log('item: ', items[0]);
+              if (emotionsIcon[0] || emotionsIcon[1]) {
                 const xPos = (percentageScrolled - 100) + '%';
                 const yPos = (percentageScrolled - 100) * 0.5 + '%';
 
-                items[0].style.left = xPos;
-                items[0].style.top = yPos;
-                items[1].style.left = xPos;
-                items[1].style.top = yPos;
+                emotionsIcon[0].style.left = xPos;
+                emotionsIcon[0].style.top = yPos;
+                emotionsIcon[1].style.left = xPos;
+                emotionsIcon[1].style.top = yPos;
               }
-              item.style.display = 'block';
-              const xPos = (percentageScrolled - 100 - i) + '%';
-              const yPos = (percentageScrolled - 100 - i) * (i / 7) + '%';
-              item.style.width = `${percentageScrolled}px`;
-              item.style.left = xPos;
-              item.style.top = yPos;
+              emotion.style.display = 'block';
+              const xPos = (percentageScrolled - 100) + '%';
+              const yPos = (percentageScrolled - 100) * (i / 7) + '%';
+              emotion.style.width = `${percentageScrolled}px`;
+              emotion.style.left = xPos;
+              emotion.style.top = yPos;
 
               const randomSpeed = getRandom();
-              item.style.transition = `left ${randomSpeed}s, top ${randomSpeed}s`;
+              emotion.style.transition = `left ${randomSpeed}s, top ${randomSpeed}s`;
+
             } else {
-              item.style.display = 'none';
+              emotion.style.display = 'none';
             }
           }
         });
+        stuffIcon.forEach((icons, i) => {
+          if (maxPercentageScrolled === 100) {
+            icons.style.display = 'block';
+          }
+        })
       } else {
         rainbowWrap.style.position = 'static';
+        rainbowWrap.style.opacity = '0';
       }
-    };
+      const slidingEndPosition = documentHeight - windowHeight - plusSection - 10;
+
+      if (scrollTop >= slidingEndPosition) {
+        rainbowWrap.style.opacity = '0';
+        if(scrollTop - slidingEndPosition >= 1500){
+          rainbowWrap.style.position = 'static';
+        }
+      }
+    }
 
     window.addEventListener('scroll', drawRainbow);
 
     return () => {
       window.removeEventListener('scroll', drawRainbow);
     };
-  }, [getRandom, icons]);
+  });
 
   return (
     <div className='slide-emotion-content'>
@@ -80,12 +98,22 @@ const SlideEmoticon = () => {
             src={process.env.PUBLIC_URL + './images/rainbow-sliding.png'}
             alt="rainbow"
           />
-          <div className='icon-list'>
+          <div className='emotion-list'>
+            {emotions.map((index) => (
+              <img
+                key={`emotion_${index}`}
+                className={`emotion_${index}`}
+                src={process.env.PUBLIC_URL + `./images/emotion-${index}.png`}
+                alt={`emotion ${index}`}
+              />
+            ))}
+          </div>
+          <div className="icon-list">
             {icons.map((index) => (
               <img
                 key={`icon_${index}`}
                 className={`icon_${index}`}
-                src={process.env.PUBLIC_URL + `./images/emotion-${index}.png`}
+                src={process.env.PUBLIC_URL + `./images/icon-${index}.png`}
                 alt={`icon ${index}`}
               />
             ))}

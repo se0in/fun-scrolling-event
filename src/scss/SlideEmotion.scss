@@ -1,28 +1,104 @@
 .slide-emotion-content {
   margin: 300px 0;
   overflow: hidden;
-  // background-color: rgb(162, 199, 102);
-  height: 4000px;
-  //미끄럼틀 영역
+
   .scroll-container {
-    height: 1000px;
-    // background-color: rgba(41, 41, 41, 0.178);
+    height: 3000px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
     .rainbow-wrap {
-      // background-color: rgba(0, 0, 255, 0.164);
       .rainbow {
         width: 100%;
+        animation: icon_animation 5s infinite;
       }
-      .icon-list {
-        // background-color: rgba(255, 0, 0, 0.144);
-        img {
+
+      .emotion-list {
+        img[class^=emotion] {
           position: absolute;
+          width: 100%;
           z-index: 100;
           display: none;
-          max-width: 10vw;
+          animation: icon_animation 3s infinite;
+          max-width: 15vw;
+        }
+      }
+
+      .icon-list {
+        img[class^=icon] {
+          position: fixed;
+          display: none;
+          animation: icon_animation 3s infinite;
+
+          &:nth-child(1) {
+            top: 30vh;
+            left: 10%;
+            width: 10vw;
+            animation-delay: .5s;
+            min-width: 100px;
+          }
+
+          &:nth-child(2) {
+            top: 80vh;
+            left: 6%;
+            width: 7vw;
+            animation-delay: .5s;
+            min-width: 100px;
+          }
+
+          &:nth-child(3) {
+            top: 10vh;
+            left: 40vw;
+            width: 4vw;
+            min-width: 40px;
+          }
+
+          &:nth-child(4) {
+            top: 6vh;
+            left: 50vw;
+            width: 3vw;
+            animation-delay: .5s;
+            min-width: 40px;
+          }
+
+          &:nth-child(5) {
+            top: 10vh;
+            left: 80vw;
+            width: 8vw;
+          }
+
+          &:nth-child(6) {
+            top: 50vh;
+            left: 50vw;
+            width: 8vw;
+            min-width: 40px;
+          }
+
+          &:nth-child(7) {
+            top: 20vh;
+            left: 70vw;
+            width: 7vw;
+            animation-delay: .5s;
+          }
         }
       }
     }
   }
 }
 
+@keyframes icon_animation {
+  0% {
+    transform: translateY(0);
+  }
 
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

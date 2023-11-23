@@ -2,9 +2,9 @@ import React, { useRef, useEffect, useState } from 'react';
 import '../scss/FlowText.scss';
 
 const FlowText = () => {
-  const [textArr1, setTextArr1] = useState("Have fun riding the slide!!".split(' '));
-  const [textArr2, setTextArr2] = useState("It's so fun. Let’s ride together too".split(' '));
-  const [textArr3, setTextArr3] = useState("I want to ride one more time".split(' '));
+  const [textArr1] = useState("Have fun riding the slide!!".split(' '));
+  const [textArr2] = useState("It's so fun. Let’s ride together too".split(' '));
+  const [textArr3] = useState("I want to ride one more time".split(' '));
   
   const pTag1Ref = useRef(null);
   const pTag2Ref = useRef(null);
