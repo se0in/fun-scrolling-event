@@ -1,22 +1,23 @@
 .slide-emotion-content {
   margin: 0;
   overflow: hidden;
-
+  
   .scroll-container {
-    height: 2000px;
+    height: 3000px;
     overflow-y: scroll;
-
+    
     &::-webkit-scrollbar {
       width: 0;
     }
-
+    
     .rainbow-wrap {
       .rainbow {
         width: 0;
         animation: icon_animation 6s infinite;
       }
-
+      
       .emotion-list {
+        
         img[class^=emotion] {
           position: absolute;
           width: 100%;

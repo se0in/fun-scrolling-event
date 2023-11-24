@@ -8,11 +8,10 @@ const SlideEmoticon = () => {
 
   const getRandom = useMemo(() => () => Math.random() * 3 + 0.5, []);
 
-  const plusSection = 1000;
+  const plusSection = 4500;
 
   useEffect(() => {
     const emotionsIcon = emotions.map((index) => document.querySelector(`.emotion_${index}`));
-    /*c onst stuffIcon = icons.map((index) => document.querySelector(`.icon_${index}`)); */
 
     const drawRainbow = () => {
       const scrollTop = window.scrollY;
@@ -61,20 +60,15 @@ const SlideEmoticon = () => {
             }
           }
         });
-        /* stuffIcon.forEach((icons, i) => {
-          if (maxPercentageScrolled === 100) {
-            icons.style.display = 'block';
-          }
-        }) */
       } else {
         rainbowWrap.style.position = 'static';
         rainbowWrap.style.opacity = '0';
       }
-      const slidingEndPosition = documentHeight - windowHeight - plusSection - 10;
+      const slidingEndPosition = documentHeight - windowHeight - plusSection;
 
       if (scrollTop >= slidingEndPosition) {
         rainbowWrap.style.opacity = '0';
-        if(scrollTop - slidingEndPosition >= 1500){
+        if(scrollTop - slidingEndPosition >= 500){
           rainbowWrap.style.position = 'static';
         }
       }

@@ -4,9 +4,9 @@ import '../scss/Title.scss';
 
 const Title = () => {
   useEffect(() => {
-    const containerCoords = document.querySelector('.title-container');
+    const containerCoords = document.querySelector('.title-content');
     const faceButton = document.querySelector('.face-button');
-    const faceContainer = document.querySelector('.face-container');
+    const faceContainer = document.querySelector('.face-content');
     const bubbleContainer = document.querySelector('.bubble-box');
     const mouseCoords = containerCoords.getBoundingClientRect();
 
@@ -51,13 +51,13 @@ const Title = () => {
   }, []);
 
   return (
-    <div className='title-container'>
+    <div className='title-content'>
       <div className="bubble-box">
         <p>Let's Scroll!!(수정예정)</p>
       </div>
 
       <button className='face-button'>
-        <div className="face-container">
+        <div className="face-content">
           <img
             src={process.env.PUBLIC_URL + './images/emotion-1.png'}
             alt="emotion1" />
