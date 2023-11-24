@@ -16,7 +16,6 @@ const SlideEmoticon = () => {
 
     const drawRainbow = () => {
       const scrollTop = window.scrollY;
-      console.log('scrollTop: ', scrollTop);
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const rainbowWrap = rainbowWrapRef.current;

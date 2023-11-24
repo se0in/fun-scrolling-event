@@ -2,7 +2,7 @@ import './App.css';
 import FlowText from './components/FlowText';
 import Footer from './components/Footer';
 import SlideEmoticon from './components/SlideEmoticon';
-import Test from './components/Test';
+import GradationText from './components/GradationText';
 import Title from './components/Title';
 
 
@@ -15,7 +15,7 @@ function App() {
       <Title />
       <SlideEmoticon />
       <FlowText />
-      <Test />
+      <GradationText />
       <Footer />
     </div>
   );
