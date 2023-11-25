@@ -1,25 +1,126 @@
 .gradation-text-content {
+  position: relative;
   width: 100%;
   height: 6000px;
-  position: relative;
   background-color: rgba(233, 233, 233, 0.507);
+
   .gradation-inner {
     position: sticky;
     top: 0;
     width: 100%;
     height: 100vh;
-    .phone-box {
-      padding-top: 20vh;
-      .phone {
-        // width: calc(100% - 20px);
-        margin: 0 auto;
-        
-        
-        width: 350px;
-        height: 550px;
-        background-color: #dfcdcd;
-      }
 
+    .phone-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .phone {
+        overflow-y: hidden;
+        width: 18.23vw;
+        min-width: 300px;
+        height: 57.53vh;
+        margin: 0 auto;
+        border: 10px solid #ffffff;
+        border-radius: 54px;
+        transition: .2s;
+
+        &::-webkit-scrollbar {
+          width: 0px;
+          height: 0px;
+        }
+
+        .gradation-background-color {
+          display: flex;
+          width: 100%;
+          height: 3000px;
+          overflow-x: scroll;
+
+          &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+          }
+
+          li {
+            width: calc(100% / 6);
+            height: 100%;
+            position: relative;
+
+            &:nth-child(1) {
+              order: 6;
+              background: #F5886E;
+              background: -webkit-linear-gradient(to bottom, #F5886E 30%, #FEBF5E 40%, #f0ed66 50%, #bbe97f 60%, #73D6F6 75%, #6D83FD 105%);
+              background: linear-gradient(to bottom, #F5886E 30%, #FEBF5E 40%, #f0ed66 50%, #bbe97f 60%, #73D6F6 75%, #6D83FD 105%);
+              filter:contrast(130%)
+            }
+            &:nth-child(2) {
+              order: 5;
+              background: #F5886E;
+              background: -webkit-linear-gradient(to bottom, #F5886E 25%, #FEBF5E 35%, #f0ed66 45%, #bbe97f 55%, #73D6F6 70%, #6D83FD 100%);
+              background: linear-gradient(to bottom, #F5886E 25%, #FEBF5E 35%, #f0ed66 45%, #bbe97f 55%, #73D6F6 70%, #6D83FD 100%);
+              filter:contrast(120%)
+            }
+            &:nth-child(3) {
+              order: 4;
+              background: #F5886E;
+              background: -webkit-linear-gradient(to bottom, #F5886E 20%, #FEBF5E 30%, #f0ed66 40%, #bbe97f 50%, #73D6F6 75%, #6D83FD 95%);
+              background: linear-gradient(to bottom, #F5886E 20%, #FEBF5E 30%, #f0ed66 40%, #bbe97f 50%, #73D6F6 75%, #6D83FD 95%);
+              filter:contrast(110%)
+            }
+            &:nth-child(4) {
+              order: 3;
+              background: #F5886E;
+              background: -webkit-linear-gradient(to bottom, #F5886E 15%, #FEBF5E 25%, #f0ed66 35%, #bbe97f 45%, #73D6F6 75%, #6D83FD 90%);
+              background: linear-gradient(to bottom, #F5886E 15%, #FEBF5E 25%, #f0ed66 35%, #bbe97f 45%, #73D6F6 75%, #6D83FD 90%);
+              filter:contrast(100%)
+            }
+            &:nth-child(5) {
+              order: 2;
+              background: #F5886E;
+              background: -webkit-linear-gradient(to bottom, #F5886E 10%, #FEBF5E 20%, #f0ed66 30%, #bbe97f 40%, #73D6F6 75%, #6D83FD 85%);
+              background: linear-gradient(to bottom, #F5886E 10%, #FEBF5E 20%, #f0ed66 30%, #bbe97f 40%, #73D6F6 75%, #6D83FD 85%);
+              filter:contrast(95%)
+            }
+            &:nth-child(6) {
+              order: 1;
+              background: #F5886E;
+              background: -webkit-linear-gradient(to bottom, #F5886E 5%, #FEBF5E 15%, #f0ed66 25%, #bbe97f 35%, #73D6F6 75%,#6D83FD 83%);
+              background: linear-gradient(to bottom, #F5886E 5%, #FEBF5E 15%, #f0ed66 25%, #bbe97f 35%, #73D6F6 75%,#6D83FD 83%);
+              filter:contrast(90%)
+            }
+            
+          }
+        }
+      }
     }
+    .gradation-background-text {
+      display: none;
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 5vw;
+      width: 100%;
+      height: 100%;
+      // * 0font-size: clamp(최소, 최대, 기본);
+      font-size: clamp(28px, 4vw, 40px);
+      font-family: "PyeongChangPeace-Bold", sans-serif;
+      color: #fff;
+      text-shadow: 1px 1px 1px #00000034;
+      animation: gradationText 1s;
+      li {
+        height: calc(100vh / 6);
+        position: relative;
+        top: calc(100vh / 6 / 2.8);
+      }
+    }
+  }
+}
+@keyframes gradationText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

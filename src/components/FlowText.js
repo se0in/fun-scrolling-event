@@ -1,3 +1,10 @@
+/* 
+  author @se0in
+  Created Date : 2023.11.22.
+  * 텍스트가 자동으로 흐르며 스크롤에 따라 속도가 빨라지는 이벤트
+  * 참고 출처 : https://codepen.io/rudtjd2548/pen/wvpgqwY
+*/
+
 import React, { useRef, useEffect, useState } from 'react';
 import '../scss/FlowText.scss';
 

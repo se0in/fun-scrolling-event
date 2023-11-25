@@ -1,3 +1,10 @@
+/* 
+  author @se0in
+  Created Date : 2023.11.21.
+  * 스크롤에 따라 이미지들이 슬라이딩하는 스크롤 이벤트 
+  Todo : 마무리 시점에 영역 위치 다시 잡을 것 
+*/
+
 import React, { useEffect, useMemo, useRef } from 'react';
 import '../scss/SlideEmotion.scss';
 

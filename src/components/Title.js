@@ -1,3 +1,11 @@
+/* 
+  author @se0in
+  Created Date : 2023.11.23.
+  * 마우스 위치에 따라 반응하는 이벤트 
+  * 첫 화면이 될 영역
+  * 참고 출처 : https://codepen.io/kathykato/pen/EzXZvN
+*/
+
 import React, { useEffect } from 'react';
 import gsap, { Power4 } from 'gsap';
 import '../scss/Title.scss';
