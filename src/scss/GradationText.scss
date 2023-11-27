@@ -1,101 +1,111 @@
 .gradation-text-content {
   position: relative;
   width: 100%;
-  height: 4000px;
-  background-color: rgba(233, 233, 233, 0.507);
-  // pointer-events: none;
-  
+  height: 5400px;
+
   .gradation-inner {
     position: sticky;
     top: 0;
     width: 100%;
     height: 100vh;
-    
+
     .phone-box {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      
+
       .phone {
+        transform: rotate(90deg);
         overflow: hidden;
         width: 18.23vw;
         min-width: 300px;
         height: 57.53vh;
         margin: 0 auto;
-        border: 10px solid #ffffff;
+        border: 10px solid #ffffff5b;
         border-radius: 54px;
         transition: .2s;
-        
-        /* &::-webkit-scrollbar {
-          width: 0px;
-          height: 0px;
+        pointer-events: none;
+
+        &::-webkit-scrollbar {
+          display: none;
         }
-         */
+
         .gradation-background-color {
-          display: flex; 
+          display: flex;
           width: 100%;
-          height: 4600px;
-          
+          height: 5200px;
+          pointer-events: none;
+
           &::-webkit-scrollbar {
-            width: 0;
-            height: 0;
+            display: none;
           }
-          
-          li {
-            width: calc(100% / 6); 
+
+          .colorList {
+            width: calc(100% / 6);
             height: 100%;
             position: relative;
+            pointer-events: none;
             overflow-x: scroll;
             overflow-Y: hidden;
+
+            &::-webkit-scrollbar {
+              display: none;
+            }
 
             &:nth-child(1) {
               order: 6;
               background: #F5886E;
               background: -webkit-linear-gradient(to bottom, #F5886E 30%, #FEBF5E 40%, #f0ed66 50%, #bbe97f 60%, #73D6F6 75%, #6D83FD 105%);
               background: linear-gradient(to bottom, #F5886E 30%, #FEBF5E 40%, #f0ed66 50%, #bbe97f 60%, #73D6F6 75%, #6D83FD 105%);
-              filter:contrast(130%)
+              filter: contrast(130%)
             }
+
             &:nth-child(2) {
               order: 5;
               background: #F5886E;
               background: -webkit-linear-gradient(to bottom, #F5886E 25%, #FEBF5E 35%, #f0ed66 45%, #bbe97f 55%, #73D6F6 70%, #6D83FD 100%);
               background: linear-gradient(to bottom, #F5886E 25%, #FEBF5E 35%, #f0ed66 45%, #bbe97f 55%, #73D6F6 70%, #6D83FD 100%);
-              filter:contrast(120%)
+              filter: contrast(120%)
             }
+
             &:nth-child(3) {
               order: 4;
               background: #F5886E;
               background: -webkit-linear-gradient(to bottom, #F5886E 20%, #FEBF5E 30%, #f0ed66 40%, #bbe97f 50%, #73D6F6 75%, #6D83FD 95%);
               background: linear-gradient(to bottom, #F5886E 20%, #FEBF5E 30%, #f0ed66 40%, #bbe97f 50%, #73D6F6 75%, #6D83FD 95%);
-              filter:contrast(110%)
+              filter: contrast(110%)
             }
+
             &:nth-child(4) {
               order: 3;
               background: #F5886E;
               background: -webkit-linear-gradient(to bottom, #F5886E 15%, #FEBF5E 25%, #f0ed66 35%, #bbe97f 45%, #73D6F6 75%, #6D83FD 90%);
               background: linear-gradient(to bottom, #F5886E 15%, #FEBF5E 25%, #f0ed66 35%, #bbe97f 45%, #73D6F6 75%, #6D83FD 90%);
-              filter:contrast(100%)
+              filter: contrast(100%)
             }
+
             &:nth-child(5) {
               order: 2;
               background: #F5886E;
               background: -webkit-linear-gradient(to bottom, #F5886E 10%, #FEBF5E 20%, #f0ed66 30%, #bbe97f 40%, #73D6F6 75%, #6D83FD 85%);
               background: linear-gradient(to bottom, #F5886E 10%, #FEBF5E 20%, #f0ed66 30%, #bbe97f 40%, #73D6F6 75%, #6D83FD 85%);
-              filter:contrast(95%)
+              filter: contrast(95%)
             }
+
             &:nth-child(6) {
               order: 1;
               background: #F5886E;
-              background: -webkit-linear-gradient(to bottom, #F5886E 5%, #FEBF5E 15%, #f0ed66 25%, #bbe97f 35%, #73D6F6 75%,#6D83FD 83%);
-              background: linear-gradient(to bottom, #F5886E 5%, #FEBF5E 15%, #f0ed66 25%, #bbe97f 35%, #73D6F6 75%,#6D83FD 83%);
-              filter:contrast(90%)
+              background: -webkit-linear-gradient(to bottom, #F5886E 5%, #FEBF5E 15%, #f0ed66 25%, #bbe97f 35%, #73D6F6 75%, #6D83FD 83%);
+              background: linear-gradient(to bottom, #F5886E 5%, #FEBF5E 15%, #f0ed66 25%, #bbe97f 35%, #73D6F6 75%, #6D83FD 83%);
+              filter: contrast(90%)
             }
-            
+
           }
         }
       }
     }
+
     .gradation-background-text {
       display: none;
       pointer-events: none;
@@ -110,19 +120,57 @@
       color: #fff;
       text-shadow: 1px 1px 1px #00000034;
       animation: gradationText 1s;
+
       li {
         height: calc(100vh / 6);
         position: relative;
         top: calc(100vh / 6 / 2.8);
+        animation: textAni 3s infinite alternate;
+
+        &:nth-child(1) {
+          margin-left: 60vw;
+        }
+
+        &:nth-child(2) {
+          margin-left: 50vw;
+        }
+
+        &:nth-child(3) {
+          margin-left: 40vw;
+        }
+
+        &:nth-child(4) {
+          margin-left: 30vw;
+        }
+
+        &:nth-child(5) {
+          margin-left: 20vw;
+        }
+
+        &:nth-child(6) {
+          margin-left: 10vw;
+        }
       }
     }
   }
 }
+
 @keyframes gradationText {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes textAni {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
