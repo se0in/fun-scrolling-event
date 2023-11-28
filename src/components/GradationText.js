@@ -68,14 +68,14 @@ const GradationText = () => {
 
           // * 90도로 회전 완료 후 텍스트 영역 표시, 스크롤
           const BackgroundColorUlLeft =
-            gradationBackgroundColorUl.getBoundingClientRect().left;
+          gradationBackgroundColorUl.getBoundingClientRect().left;
           const scrollXWidth = window.innerWidth + BackgroundColorUlLeft * -1;
           phone.style.overflowX = "scroll";
+          
+          let phoneScrollSection = isRotationComplete && scrollXWidth <= 3800;
+          gradationBackgroundTextUl.style.display = phoneScrollSection ? "block" : "none";
+          phone.style.pointerEvents = phoneScrollSection ? "auto" : "none";
 
-          if (isRotationComplete && scrollXWidth <= 3800) {
-            gradationBackgroundTextUl.style.display = "block";
-            phone.style.pointerEvents = "auto";
-          }
         } else {
           // * text 숨김
           gradationBackgroundTextUl.style.display = "none";

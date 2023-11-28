@@ -53,50 +53,50 @@
 
             &:nth-child(1) {
               order: 6;
-              background: #F5886E;
-              background: -webkit-linear-gradient(to bottom, #F5886E 30%, #FEBF5E 40%, #f0ed66 50%, #bbe97f 60%, #73D6F6 75%, #6D83FD 105%);
-              background: linear-gradient(to bottom, #F5886E 30%, #FEBF5E 40%, #f0ed66 50%, #bbe97f 60%, #73D6F6 75%, #6D83FD 105%);
-              filter: contrast(130%)
+              background: #fe886a;
+              background: -webkit-linear-gradient(to bottom, #fe886a 30%, #FEBF5E 40%, #f0ed66 50%, #bbe97f 60%, #73D6F6 75%, #6D83FD 105%);
+              background: linear-gradient(to bottom, #fe886a 35%, #FEBF5E 40%, #f0ed66 50%, #bbe97f 60%, #73D6F6 75%, #6D83FD 105%);
+              
             }
 
             &:nth-child(2) {
               order: 5;
-              background: #F5886E;
-              background: -webkit-linear-gradient(to bottom, #F5886E 25%, #FEBF5E 35%, #f0ed66 45%, #bbe97f 55%, #73D6F6 70%, #6D83FD 100%);
-              background: linear-gradient(to bottom, #F5886E 25%, #FEBF5E 35%, #f0ed66 45%, #bbe97f 55%, #73D6F6 70%, #6D83FD 100%);
-              filter: contrast(120%)
+              background: #fc8263;
+              background: -webkit-linear-gradient(to bottom, #fc8263 25%, #FEBF5E 35%, #f0ed66 45%, #bbe97f 55%, #6ecded 75%, #6a7ff6 100%);
+              background: linear-gradient(to bottom, #fc8263 25%, #FEBF5E 35%, #f0ed66 45%, #bbe97f 55%, #6ecded 75%, #6a7ff6 100%);
+              
             }
 
             &:nth-child(3) {
               order: 4;
-              background: #F5886E;
-              background: -webkit-linear-gradient(to bottom, #F5886E 20%, #FEBF5E 30%, #f0ed66 40%, #bbe97f 50%, #73D6F6 75%, #6D83FD 95%);
-              background: linear-gradient(to bottom, #F5886E 20%, #FEBF5E 30%, #f0ed66 40%, #bbe97f 50%, #73D6F6 75%, #6D83FD 95%);
-              filter: contrast(110%)
+              background: #f77a5a;
+              background: -webkit-linear-gradient(to bottom, #f77a5a 20%, #FEBF5E 30%, #f0ed66 40%, #bbe97f 50%, #6bc9e9 75%, #677cf1 95%);
+              background: linear-gradient(to bottom, #f77a5a 25%, #FEBF5E 30%, #f0ed66 40%, #bbe97f 50%, #6bc9e9 75%, #677cf1 95%);
+              
             }
 
             &:nth-child(4) {
               order: 3;
-              background: #F5886E;
-              background: -webkit-linear-gradient(to bottom, #F5886E 15%, #FEBF5E 25%, #f0ed66 35%, #bbe97f 45%, #73D6F6 75%, #6D83FD 90%);
-              background: linear-gradient(to bottom, #F5886E 15%, #FEBF5E 25%, #f0ed66 35%, #bbe97f 45%, #73D6F6 75%, #6D83FD 90%);
-              filter: contrast(100%)
+              background: #f87554;
+              background: -webkit-linear-gradient(to bottom, #f87554 15%, #FEBF5E 25%, #f0ed66 35%, #bbe97f 45%, #66c7e8 75%, #6276e8 90%);
+              background: linear-gradient(to bottom, #f87554 20%, #FEBF5E 25%, #f0ed66 35%, #bbe97f 45%, #66c7e8 75%, #6276e8 90%);
+              
             }
 
             &:nth-child(5) {
               order: 2;
-              background: #F5886E;
-              background: -webkit-linear-gradient(to bottom, #F5886E 10%, #FEBF5E 20%, #f0ed66 30%, #bbe97f 40%, #73D6F6 75%, #6D83FD 85%);
-              background: linear-gradient(to bottom, #F5886E 10%, #FEBF5E 20%, #f0ed66 30%, #bbe97f 40%, #73D6F6 75%, #6D83FD 85%);
-              filter: contrast(95%)
+              background: #f56f4e;
+              background: -webkit-linear-gradient(to bottom, #f56f4e 10%, #FEBF5E 20%, #f0ed66 30%, #bbe97f 40%, #63c2e2 75%, #5f72e0 85%);
+              background: linear-gradient(to bottom, #f56f4e 15%, #FEBF5E 20%, #f0ed66 30%, #bbe97f 40%, #63c2e2 75%, #5f72e0 85%);
+              
             }
 
             &:nth-child(6) {
               order: 1;
-              background: #F5886E;
-              background: -webkit-linear-gradient(to bottom, #F5886E 5%, #FEBF5E 15%, #f0ed66 25%, #bbe97f 35%, #73D6F6 75%, #6D83FD 83%);
-              background: linear-gradient(to bottom, #F5886E 5%, #FEBF5E 15%, #f0ed66 25%, #bbe97f 35%, #73D6F6 75%, #6D83FD 83%);
-              filter: contrast(90%)
+              background: #f46a48;
+              background: -webkit-linear-gradient(to bottom, #f46a48 5%, #FEBF5E 15%, #f0ed66 25%, #bbe97f 35%, #5dbddd 75%, #5c6fda 83%);
+              background: linear-gradient(to bottom, #f46a48 10%, #FEBF5E 15%, #f0ed66 25%, #bbe97f 35%, #5dbddd 75%, #5c6fda 83%);
+              
             }
 
           }

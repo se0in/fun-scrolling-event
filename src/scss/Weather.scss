@@ -55,21 +55,18 @@
             position: absolute;
             display: block;
             width: 8px;
-            height: 200px;
-            transform: rotate(25deg);
+            height: 150px;
+            border-radius: 10px;
             transition: .1s;
-            // background-color: #96FED9;
+            background-color: #96FED9;
             &:nth-child(1) {
-              background-color: red;
-              left: 10%;
+              left: 25%;
             }
             &:nth-child(2) {
-              background-color: orange;
-              left: 20%;
+              left: 50%;
             }
             &:nth-child(3) {
-              background-color: yellow;
-              left: 30%;
+              left: 75%;
             }
           }
         }
@@ -104,9 +101,6 @@
           font-size: clamp(28px, 60px, 7vw);
           color: #b5d0ff;
           letter-spacing: -0.5vw;
-          &.week {
-            margin-top: -5px;
-          }
         }
       }
     }

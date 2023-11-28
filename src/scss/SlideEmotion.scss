@@ -12,18 +12,18 @@
     
     .rainbow-wrap {
       .rainbow {
-        width: 0;
+        width: 100%;
         animation: icon_animation 6s infinite;
       }
       
       .emotion-list {
         img[class^=emotion] {
           position: absolute;
-          width: 100%;
+          // width: 100%;
           z-index: 100;
           display: none;
           animation: icon_animation 3s infinite;
-          max-width: 10vw;
+          max-width: 80vw;
         }
       }
     }
