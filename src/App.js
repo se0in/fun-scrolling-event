@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import SlideEmoticon from './components/SlideEmoticon';
 import GradationText from './components/GradationText';
 import Title from './components/Title';
+import Weather from './components/Weather';
 
 
 
@@ -22,6 +23,7 @@ function App() {
       <SlideEmoticon />
       <FlowText />
       <GradationText />
+      <Weather />
       <Footer />
     </div>
   );

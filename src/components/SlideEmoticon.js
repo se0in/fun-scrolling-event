@@ -19,12 +19,9 @@ const SlideEmoticon = () => {
 
     const drawRainbow = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      console.log('scrollTop: ', scrollTop);
-      const documentHeight = document.documentElement.scrollHeight;
       const rainbowWrap = rainbowWrapRef.current;
       const container = containerRef.current;
       const percentageScrolled = Math.floor(scrollTop / 15);
-      console.log('percentageScrolled: ', percentageScrolled);
       const maxPercentageScrolled = Math.min(percentageScrolled, 100);
       const rainbow = rainbowRef.current;
       if (rainbow) {
@@ -70,9 +67,6 @@ const SlideEmoticon = () => {
         rainbowWrap.style.opacity = '0';
       }
       const slidingEndPosition = 3900;
-      console.log('slidingEndPosition: ', slidingEndPosition);
-      console.log('documentHeight: ', documentHeight);
-
       if (scrollTop >= 3800) {
         rainbowWrap.style.opacity = '0';
         if (scrollTop >= slidingEndPosition + 1000) {

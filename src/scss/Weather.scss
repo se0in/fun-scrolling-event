@@ -1,0 +1,114 @@
+.weather-content {
+  margin-top: 300px;
+  height: 5000px;
+
+  .weather-box {
+    position: sticky;
+    top: 0;
+    margin: 0 auto;
+    height: calc(100vh - 40px);
+    height: 100vh;
+    overflow: hidden;
+
+    .rain-box {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      .rain-title {
+        position: absolute;
+        z-index: 100;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'LOTTERIACHAB', "PyeongChangPeace-Bold", sans-serif;
+        // * font-size: clamp(최소, 최대, 기본);
+        font-size: clamp(50px, 160px, 16vw);
+      }
+      .rain-inner {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        .column {
+          width: calc(100% / 4);
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+
+          &:nth-child(1) {
+            background: linear-gradient(#6234eb, #8EB7FC 30%, #8EB7FC 50%, #41219e);
+          }
+
+          &:nth-child(2) {
+            background: linear-gradient(#6234eb, #8EB7FC 60%, #8EB7FC 80%, #41219e);
+          }
+
+          &:nth-child(3) {
+            background: linear-gradient(#6234eb, #8EB7FC 30%, #8EB7FC 50%, #41219e);
+          }
+
+          &:nth-child(4) {
+            background: linear-gradient(#6234eb, #8EB7FC 60%, #8EB7FC 80%, #41219e);
+          }
+
+          .rain-item {
+            position: absolute;
+            display: block;
+            width: 8px;
+            height: 200px;
+            transform: rotate(25deg);
+            transition: .1s;
+            // background-color: #96FED9;
+            &:nth-child(1) {
+              background-color: red;
+              left: 10%;
+            }
+            &:nth-child(2) {
+              background-color: orange;
+              left: 20%;
+            }
+            &:nth-child(3) {
+              background-color: yellow;
+              left: 30%;
+            }
+          }
+        }
+      }
+    }
+    .date-box {
+      position: absolute;
+      z-index: 140;
+      flex-wrap: wrap;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 40px;
+      display: flex;
+      width: 30vw;
+      max-width: 240px;
+      min-width: 150px;
+      height: 30vw;
+      max-height: 240px;
+      min-height: 150px;
+      .circle {
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        background-color: #000;
+        position: relative;
+        p {
+          position: absolute;
+          top: 50%;
+          left: calc(50% - .25vw);
+          transform: translate(-50%, -50%);
+          font-family: 'Pretendard-Regular' , sans-serif;
+          font-size: clamp(28px, 60px, 7vw);
+          color: #b5d0ff;
+          letter-spacing: -0.5vw;
+          &.week {
+            margin-top: -5px;
+          }
+        }
+      }
+    }
+  }
+}

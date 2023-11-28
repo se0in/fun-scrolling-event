@@ -13,8 +13,7 @@ const GradationText = () => {
     // * 스크롤 효과
     const rotateHandleScroll = () => {
       const isMobile = window.innerWidth < 1024;
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const inner = document.querySelector(".gradation-inner");
       const innerHeight = inner.getBoundingClientRect().top;
       const phone = document.querySelector(".phone");
