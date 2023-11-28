@@ -1,8 +1,8 @@
 /* 
   author @se0in
   Created Date : 2023.11.21.
+  Update : 2023.11.28.
   * 스크롤에 따라 이미지들이 슬라이딩하는 스크롤 이벤트 
-  Todo : 마무리 시점에 영역 위치 다시 잡을 것 
 */
 
 import React, { useEffect, useMemo, useRef } from 'react';
@@ -11,22 +11,20 @@ import '../scss/SlideEmotion.scss';
 const SlideEmoticon = () => {
   const [rainbowRef, rainbowWrapRef, containerRef] = [useRef(null), useRef(null), useRef(null)]
   const emotions = [...Array.from({ length: 7 }, (_, index) => index + 1)]
-  const icons = [...Array.from({ length: 7 }, (_, index) => index + 1)]
 
   const getRandom = useMemo(() => () => Math.random() * 3 + 0.5, []);
-
-  const plusSection = 4500;
 
   useEffect(() => {
     const emotionsIcon = emotions.map((index) => document.querySelector(`.emotion_${index}`));
 
     const drawRainbow = () => {
-      const scrollTop = window.scrollY;
-      const windowHeight = window.innerHeight;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      console.log('scrollTop: ', scrollTop);
       const documentHeight = document.documentElement.scrollHeight;
       const rainbowWrap = rainbowWrapRef.current;
       const container = containerRef.current;
-      const percentageScrolled = (scrollTop / (documentHeight - windowHeight)) * 400;
+      const percentageScrolled = Math.floor(scrollTop / 15);
+      console.log('percentageScrolled: ', percentageScrolled);
       const maxPercentageScrolled = Math.min(percentageScrolled, 100);
       const rainbow = rainbowRef.current;
       if (rainbow) {
@@ -71,11 +69,13 @@ const SlideEmoticon = () => {
         rainbowWrap.style.position = 'static';
         rainbowWrap.style.opacity = '0';
       }
-      const slidingEndPosition = documentHeight - windowHeight - plusSection;
+      const slidingEndPosition = 3900;
+      console.log('slidingEndPosition: ', slidingEndPosition);
+      console.log('documentHeight: ', documentHeight);
 
-      if (scrollTop >= slidingEndPosition) {
+      if (scrollTop >= 3800) {
         rainbowWrap.style.opacity = '0';
-        if(scrollTop - slidingEndPosition >= 500){
+        if (scrollTop >= slidingEndPosition + 1000) {
           rainbowWrap.style.position = 'static';
         }
       }
@@ -105,16 +105,6 @@ const SlideEmoticon = () => {
                 className={`emotion_${index}`}
                 src={process.env.PUBLIC_URL + `./images/emotion-${index}.png`}
                 alt={`emotion ${index}`}
-              />
-            ))}
-          </div>
-          <div className="icon-list">
-            {icons.map((index) => (
-              <img
-                key={`icon_${index}`}
-                className={`icon_${index}`}
-                src={process.env.PUBLIC_URL + `./images/icon-${index}.png`}
-                alt={`icon ${index}`}
               />
             ))}
           </div>

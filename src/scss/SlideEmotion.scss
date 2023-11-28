@@ -26,65 +26,6 @@
           max-width: 10vw;
         }
       }
-
-      .icon-list {
-        img[class^=icon] {
-          position: fixed;
-          display: none;
-          animation: icon_animation 5s infinite;
-
-          &:nth-child(1) {
-            top: 30vh;
-            left: 10%;
-            width: 10vw;
-            animation-delay: .5s;
-            min-width: 100px;
-          }
-
-          &:nth-child(2) {
-            top: 80vh;
-            left: 6%;
-            width: 7vw;
-            animation-delay: .5s;
-            min-width: 100px;
-          }
-
-          &:nth-child(3) {
-            top: 10vh;
-            left: 40vw;
-            width: 4vw;
-            min-width: 40px;
-          }
-
-          &:nth-child(4) {
-            top: 6vh;
-            left: 50vw;
-            width: 3vw;
-            animation-delay: .5s;
-            min-width: 40px;
-          }
-
-          &:nth-child(5) {
-            top: 10vh;
-            left: 80vw;
-            width: 8vw;
-          }
-
-          &:nth-child(6) {
-            top: 50vh;
-            left: 50vw;
-            width: 8vw;
-            min-width: 40px;
-          }
-
-          &:nth-child(7) {
-            top: 20vh;
-            left: 70vw;
-            width: 7vw;
-            animation-delay: .5s;
-          }
-        }
-      }
     }
   }
 }

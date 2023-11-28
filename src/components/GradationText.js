@@ -18,12 +18,8 @@ const GradationText = () => {
       const inner = document.querySelector(".gradation-inner");
       const innerHeight = inner.getBoundingClientRect().top;
       const phone = document.querySelector(".phone");
-      const gradationBackgroundColorUl = document.querySelector(
-        ".gradation-background-color"
-      );
-      const gradationBackgroundTextUl = document.querySelector(
-        ".gradation-background-text"
-      );
+      const gradationBackgroundColorUl = document.querySelector(".gradation-background-color");
+      const gradationBackgroundTextUl = document.querySelector(".gradation-background-text");
 
       // * 스크롤, 회전 위치에 따라 스타일 변화될 부분
       let degrees = Math.min(Math.floor(scrollTop / 20) - 270, 90);
@@ -62,7 +58,7 @@ const GradationText = () => {
         }
 
         // * 공통된 스타일 삼항
-        phone.style.border = isRotationMostly ? "none" : "10px solid #ffffff5b";
+        phone.style.border = isRotationMostly ? "none" : "3px solid #ffffff5b";
         phone.style.borderRadius = isRotationMostly ? "0" : "54px";
 
         if (isRotationMostly) {
@@ -87,7 +83,7 @@ const GradationText = () => {
         }
       } else {
         // * 초기 스타일
-        phone.style.border = "10px solid #ffffff5b";
+        phone.style.border = "3px solid #ffffff5b";
         phone.style.borderRadius = "54px";
         phone.style.overflow = "hidden";
         gradationBackgroundTextUl.style.display = "none";
