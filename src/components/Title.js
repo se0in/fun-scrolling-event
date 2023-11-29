@@ -61,7 +61,7 @@ const Title = () => {
   return (
     <div className='title-content'>
       <div className="bubble-box">
-        <p>Let's Scroll!!(수정예정)</p>
+        <p>Let's Scroll!!</p>
       </div>
 
       <button className='face-button'>

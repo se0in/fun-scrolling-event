@@ -19,7 +19,6 @@
       .emotion-list {
         img[class^=emotion] {
           position: absolute;
-          // width: 100%;
           z-index: 100;
           display: none;
           animation: icon_animation 3s infinite;

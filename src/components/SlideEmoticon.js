@@ -3,7 +3,6 @@
   Created Date : 2023.11.21.
   Update : 2023.11.28.
   * 스크롤에 따라 이미지들이 슬라이딩하는 스크롤 이벤트 
-  TODO 코드 수정할 것
 */
 
 import React, { useEffect, useMemo, useRef } from 'react';
@@ -12,7 +11,6 @@ import '../scss/SlideEmotion.scss';
 const SlideEmoticon = () => {
   const [rainbowRef, rainbowWrapRef, containerRef] = [useRef(null), useRef(null), useRef(null)]
   const emotions = [...Array.from({ length: 7 }, (_, index) => index + 1)]
-
   const getRandom = useMemo(() => () => Math.random() * 3 + 0.5, []);
 
   useEffect(() => {
@@ -25,10 +23,8 @@ const SlideEmoticon = () => {
       const rainbow = rainbowRef.current;
       // * rainbow 계산
       const percentageScrolled = Math.floor(scrollTop / 15);
-      // console.log('percentageScrolled: ', percentageScrolled);
       const maxPercentageScrolled = Math.min(percentageScrolled, 100);
       if (rainbow) {
-        // rainbow.style.width = `${maxPercentageScrolled}%`;
       }
       const containerBounding = container ? container.getBoundingClientRect() : null;
       if (containerBounding && containerBounding.top <= 265) {
@@ -42,7 +38,6 @@ const SlideEmoticon = () => {
             if (maxPercentageScrolled >= 90) {
               if (emotionsIcon[0] || emotionsIcon[1]) {
                 const xPos = (percentageScrolled- 100) * 2.5 + '%';
-                // console.log('percentageScrolled- 100: ', percentageScrolled- 100);
                 const yPos = (percentageScrolled - 100) * 0.5 + '%';
 
                 emotionsIcon[0].style.left = xPos;
@@ -52,7 +47,7 @@ const SlideEmoticon = () => {
               }
               emotion.style.display = 'block';
               const xPos = (percentageScrolled - 100) * 2.5 + '%';
-              const yPos = (percentageScrolled - 100) * (i / 7) + '%';
+              const yPos = (percentageScrolled - 95) * (i / 8) + '%';
               emotion.style.width = `${percentageScrolled}px`;
               emotion.style.left = xPos;
               emotion.style.top = yPos;
@@ -68,7 +63,6 @@ const SlideEmoticon = () => {
       } else {
         rainbowWrap.style.top = "-100%";
         rainbowWrap.style.position = 'static';
-        // rainbowWrap.style.opacity = '0.5';
       }
       const slidingEndPosition = 3900;
       if (scrollTop >= 3800) {
