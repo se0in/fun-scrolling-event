@@ -1,5 +1,5 @@
 # Fun Scrolling Event 
-✨ 링크 : 추후 연결 ✨
+✨ 링크 : https://fun-scrolling-event.netlify.app/ ✨
 
 평소 하고 싶었던 스크롤 이벤트 작업 프로젝트
 
